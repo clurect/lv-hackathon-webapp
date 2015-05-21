@@ -3,8 +3,8 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'lv-widgets/src/css/lv-widgets';
 @font-face {
-  font-family: 'emojis';
-  src: url('fonts/emojisymbols-regular.woff');
+  font-family: 'EmojiSymbols';
+  src: url('../fonts/emojisymbols-regular.woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -205,4 +205,23 @@ button {
 .vo-only {
     position: absolute;
     left: -2000px;
+}
+.emoticon {
+    font-family:'EmojiSymbols';
+    font-size:80px;
+}
+.angry:before {
+    content:"\1F620";
+}
+.happy:before {
+    content:'\1F600;';
+}
+.sad:before {
+    content:'\1F62D;';
+}
+.indifferent:before {
+    content:'\1F610;';
+}
+.anxious:before {
+    content: '\1F625;';
 }

@@ -35,6 +35,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/**/*.html',
           '<%= yeoman.app %>/css/{,*/}*.{scss,sass}',
           '<%= yeoman.app %>/js/**/*.js',
+          '<%= yeoman.app %>/css/fonts/**/*',
           '<%= yeoman.app %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp}'
         ],
         tasks: ['shell:deploywar', 'notify:gradle']
