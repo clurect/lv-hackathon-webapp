@@ -7,8 +7,8 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 				'menu': '#menu'
 			},
 			events: {
-				'click #close-btn': "closeNavMenu",
-				'click #menu-btn': 'showNavMenu',
+				'click #close-menu-btn': "closeNavMenu",
+				'click #open-menu-btn': 'showNavMenu',
 				'click a': 'handleSelected'
 			},
 			closeNavMenu: function() {

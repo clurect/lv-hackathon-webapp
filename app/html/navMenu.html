@@ -1,7 +1,16 @@
-<button class="close-menu">Close</button>
-<label for="search">Search</label>
-<input type="text" id="search" />
-<ul>
+<button id="open-menu-btn" class="menu-btn icon-only"><span class="btn-icon fa fa-bars"></span><span class="vo-only">Menu</span></button>
+<div class="text-center search-wrapper">
+	<button id="close-menu-btn" class="fa fa-close"><span class="vo-only">Close</span></button>
+	<label for="search"><span class="vo-only">Search</span></label>
+	<input type="text" id="search" class="nav-search" />
+	<button id="search-go" class="fa fa-search"><span class="vo-only">Go</span></button>	
+</div>
+
+<div class="text-center create-post-wrapper">
+	<button class="create-post btn btn-primary">+ Create Post</button>
+</div>	
+	
+<ul class="nav-menu-items">
 	<li><a href="#">Feed Wall</a></li>
 	<li><a href="#">Favorites</a></li>
 	<li><a href="#">Profile</a></li>
