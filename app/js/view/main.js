@@ -3,6 +3,7 @@ define(function (require) {
   var template = require('text!tmpl/main.html');
   var Feed = require('view/feed');
   var HeaderView = require('view/header');
+  var Resources = require('collection/Resources');
   var Post = require('model/post');
 
   return Backbone.Marionette.Layout.extend({
@@ -13,6 +14,9 @@ define(function (require) {
       'postListRegion': '.post-list'
     },
     onShow: function() {
+      var resources = new Resources();
+      resources.fetch();
+      window.resources = resources;
       var feed = new Feed();
       var headerView = new HeaderView();
       this.headerRegion.show(headerView);
@@ -23,6 +27,5 @@ define(function (require) {
         }
       });
     }
-
   });
 });
