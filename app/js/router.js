@@ -4,12 +4,13 @@ define(function (require) {
   return Backbone.Marionette.AppRouter.extend({
 
     routeGroups: {
-      base: {
-        controller: new BaseController(),
-        routes: {
-          '': 'showIndex',
-          'login': 'showLogin'
-        }
+      controller: new BaseController(),
+      loggedInRoutes: {
+        '': 'showIndex'
+      },
+      loggedOutRoutes: {
+        '': 'showLogin',
+        'login': 'showLogin'
       }
     },
 

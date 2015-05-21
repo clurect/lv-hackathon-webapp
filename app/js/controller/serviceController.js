@@ -5,6 +5,10 @@ define(function (require) {
     login: function() {
       var App = require('app');
       window.location = App.Resources.get('oauth-login').href + App.Resources.getRedirectURI();
+    },
+    logout: function() {
+      var App = require('app');
+      App.Resources.logout();
     }
   });
 });

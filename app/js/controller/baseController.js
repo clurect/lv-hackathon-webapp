@@ -19,7 +19,6 @@ define(function (require) {
 
     },
     showLogin: function() {
-      console.log("showing login");
       App.containerRegion.show(new LoginView());
     }
   });
