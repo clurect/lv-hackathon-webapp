@@ -6,7 +6,7 @@ define(function (require) {
     itemView: Post,
     collection: new Collection(),
     onShow: function() {
-      console.log('show feed');
+
     }
   });
 });

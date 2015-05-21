@@ -25,12 +25,24 @@ require.config({
   }
 });
 
-require(['app', 'router', 'controller/popupController', 'controller/serviceController'], function (App, Router, PopupController, ServiceController) {
-  App.addInitializer(function () {
-    this.router = new Router();
-    this.popups = new PopupController();
-    this.service = new ServiceController();
-    this.vent.trigger('route:startup');
-  });
-  App.start();
+require([
+  'app', 
+  'router', 
+  'controller/popupController', 
+  'controller/serviceController'
+  ], function (App, Router, PopupController, ServiceController) {
+
+    App.processRoutes = function() {
+      var routes = App.Resources.isLoggedIn() ? App.router.loggedInRoutes : App.router.loggedOutRoutes;
+      App.router.processAppRoutes(App.router.controller, routes);
+    }
+
+    App.addInitializer(function () {
+      this.router = new Router();
+      this.popups = new PopupController();
+      this.service = new ServiceController();
+      App.processRoutes();
+      this.vent.trigger('route:startup');
+    });
+    App.start();
 });
