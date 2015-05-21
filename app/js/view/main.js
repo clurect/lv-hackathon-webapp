@@ -1,6 +1,6 @@
 define(function (require) {
   var App = require('app');
-  var template = require('text!../../html/main.html');
+  var template = require('text!tmpl/main.html');
 
   return Backbone.Marionette.Layout.extend({
     className: '',
