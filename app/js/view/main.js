@@ -2,9 +2,10 @@ define(function (require) {
   var App = require('app');
   var template = require('text!tmpl/main.html');
   var Feed = require('view/feed');
-  var Post = require('model/post');
   var HeaderView = require('view/header');
   var Resources = require('collection/Resources');
+  var Post = require('model/post');
+
   return Backbone.Marionette.Layout.extend({
     className: 'row',
     template: _.template(template),
@@ -17,18 +18,14 @@ define(function (require) {
       resources.fetch();
       window.resources = resources;
       var feed = new Feed();
-      var that = this;
-
       var headerView = new HeaderView();
       this.headerRegion.show(headerView);
-
+      this.postListRegion.show(feed);
       feed.collection.fetch({
         success: function() {
           
         }
       });
-      that.postListRegion.show(feed);
     }
-
   });
 });

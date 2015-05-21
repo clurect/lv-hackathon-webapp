@@ -1,0 +1,22 @@
+<form>
+  <div class="form-group">
+    <label for="post-title">Title</label>
+    <input data-attr="title" type="text" class="form-control" id="post-title" placeholder="Enter Post Title">
+  </div>
+  <div class="form-group">
+	<fieldset>
+		<legend>How do you feel?</legend>
+		<label for="happy"><input data-attr="mood" name="mood" type="radio" id="happy" value="1" checked /> Happy</label>
+		<label for="sad"><input data-attr="mood" name="mood"  type="radio" id="sad" value="2" /> Sad</label>
+		<label for="angry"><input data-attr="mood" name="mood"  type="radio" id="angry" value="3" /> Angry</label>
+		<label for="indifferent"><input data-attr="mood" name="mood" type="radio" id="indifferent" value="4" /> Indifferent</label>
+		<label for="anxious"><input data-attr="mood" name="mood"  type="radio" id="anxious" value="5" /> Anxious</label>
+	</fieldset>
+  </div>
+  <div class="form-group">
+    <label for="post-body">Post Body</label>
+    <textarea data-attr="message" type="password" class="form-control" id="post-body" placeholder="Enter Post Body"></textarea>
+  </div>
+  <button type="button" class="btn btn-link">Cancel</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
