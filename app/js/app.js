@@ -11,6 +11,7 @@ function () {
   App.Resources = new LV.Resources({path: 'MobileHealthPlatformWeb'});
 
   App.addRegions({
+    menuRegion: '#menu',
     containerRegion: '#container'
   });
 

@@ -1,25 +1,23 @@
 define(function (require) {
   var App = require('app');
-  var HeaderView = require('view/header');
   var MainView = require('view/main');
   var LoginView = require('view/login');
+  var NavMenu = require('view/navMenu');
 
   return Backbone.Marionette.Controller.extend({
 
-    initialize: function () {
+    initialize: function() {
       App.views = {};
       App.views.main = new MainView();
-      App.views.header = new HeaderView();
+      App.views.navMenu = new NavMenu();
+      App.views.loginView = new LoginView();
     },
-    showIndex: function () {
+    showIndex: function() {
+      App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(App.views.main);
-      App.views.main.headerRegion.show(App.views.header);
-    },
-    showAbout: function () {
-
     },
     showLogin: function() {
-      App.containerRegion.show(new LoginView());
+      App.containerRegion.show(App.views.loginView);
     }
   });
 });

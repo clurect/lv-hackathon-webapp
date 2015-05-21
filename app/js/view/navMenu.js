@@ -8,6 +8,7 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 			},
 			events: {
 				'click #close-btn': "closeNavMenu",
+				'click #menu-btn': 'showNavMenu',
 				'click a': 'handleSelected'
 			},
 			closeNavMenu: function() {
@@ -15,7 +16,10 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 			},
 			handleSelected: function(e) {
 				return false;
-			}
+			},
+		    showNavMenu: function() {
+		      
+		    }
 		});
 	}
 );
