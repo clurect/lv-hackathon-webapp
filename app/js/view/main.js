@@ -6,6 +6,7 @@ define(function (require) {
     className: '',
     template: _.template(template),
     regions: {
+      'menuRegion': '#menu',
       'headerRegion': '.header',
       'postListRegion': '.post-list'
     },
