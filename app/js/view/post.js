@@ -3,7 +3,7 @@ define(function (require) {
   var template = require('text!tmpl/post.html');
 
   return Backbone.Marionette.ItemView.extend({
-  	className: '',
+  	className: 'well',
     template: _.template(template)
   });
 });
