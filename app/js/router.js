@@ -5,7 +5,8 @@ define(function (require) {
     controller: new BaseController(),
     loggedInRoutes: {
       '': 'showIndex',
-      'newPost': 'newPost'
+      'new-post': 'newPost',
+      'new-post/:type': 'newPost'
     },
     loggedOutRoutes: {
       '': 'showLogin',

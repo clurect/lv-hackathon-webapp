@@ -10,9 +10,18 @@ define(function (require) {
     ui: {
       inputs: '[data-attr]'
     },
+    templateHelpers: function() {
+      var type = Backbone.Marionette.getOption(this, 'type');
+      return {
+        'type': type
+      };
+    },
     onSubmitPost: function(e) {
+      var type = Backbone.Marionette.getOption(this, 'type') || 'ask-a-doctor';
+
       App.service.newPost(_.extend(this.serialize(), {
         "author": "me",
+        "type": type,
         "date": Date.now()
       }));
       e.preventDefault();
@@ -25,6 +34,10 @@ define(function (require) {
         switch (dataAttr) {
           case 'mood':
             val = $('input[data-attr="mood"]:checked').val();
+            break;
+          case 'isPublic':
+            val = $e.is(':checked');
+            break;
           default:
             val = $e.val();
         }

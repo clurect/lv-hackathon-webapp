@@ -17,6 +17,14 @@
     <label for="post-body">Post Body</label>
     <textarea data-attr="message" type="password" class="form-control" id="post-body" placeholder="Enter Post Body"></textarea>
   </div>
+  <% if (type === 'ask-a-doctor') { %>
+  <div class="form-group">
+    <label for="isPublic">
+   		<input type="checkbox" data-attr="isPublic" name="isPublic" id="isPublic" />
+    	Share this question publicly?
+    </label>
+  </div>
+  <% } %>
   <button type="button" class="btn btn-link">Cancel</button>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
