@@ -16,9 +16,17 @@ define(function (require) {
     },
     onShow: function() {
       var feed = new Feed();
-      var post = new Post({text:'fun post'});
+      var that = this;
+      /*var post = new Post({text:'fun post'});
       feed.collection.add(post);
-      this.postListRegion.show(feed);
+      var post2 = new Post({text:'fun post is fun and in another place'});
+      feed.collection.add(post2);*/
+      feed.collection.fetch({
+        success: function() {
+          
+        }
+      });
+      that.postListRegion.show(feed);
     }
 
   });
