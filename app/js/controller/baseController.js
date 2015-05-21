@@ -1,20 +1,20 @@
 define(function (require) {
   var App = require('app');
   var HeaderView = require('view/header');
-  var FooterView = require('view/footer');
+  var MainView = require('view/main');
   var LoginView = require('view/login');
 
   return Backbone.Marionette.Controller.extend({
 
     initialize: function () {
       App.views = {};
+      App.views.main = new MainView();
       App.views.header = new HeaderView();
-      App.views.footer = new FooterView();
-      App.headerRegion.show(App.views.header);
-      App.footerRegion.show(App.views.footer);
+      App.containerRegion.show(App.views.main);
+      App.views.main.headerRegion.show(App.views.header);
     },
     showIndex: function () {
-      App.Resources.checkROA();
+      
     },
     showAbout: function () {
 

@@ -8,21 +8,7 @@ define(function (require) {
     className: '',
     template: _.template(template),
 
-    serializeData: function () {
-      return {
-        appName: App.name
-      };
-    },
-
     events: {
-      'click .menu-toggle, .menu-overlay, .menu a': 'handleToggleMenu'
-    },
-
-    menuOpen: false,
-    handleToggleMenu: function () {
-      this.$el.find('.menu').toggleClass('on');
-      this.menuOpen = !this.menuOpen;
-      if (this.menuOpen) { this.$el.find('.menu a')[0].focus(); }
     }
 
   });

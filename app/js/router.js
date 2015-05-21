@@ -8,7 +8,6 @@ define(function (require) {
         controller: new BaseController(),
         routes: {
           '': 'showIndex',
-          'about': 'showAbout',
           'login': 'showLogin'
         }
       }

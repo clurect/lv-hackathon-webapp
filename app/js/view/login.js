@@ -1,6 +1,6 @@
 define(function (require) {
   var App = require('app');
-  var template = require('text!templates/login.html');
+  var template = require('text!tmpl/login.html');
 
   return Backbone.Marionette.Layout.extend({
     id: 'page-login',
