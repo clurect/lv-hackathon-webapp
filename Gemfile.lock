@@ -11,9 +11,23 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
+    diff-lcs (1.2.5)
     ffi (1.9.3)
     fssm (0.2.10)
     multi_json (1.10.1)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     rubyzip (1.1.4)
     sass (3.2.19)
     selenium-webdriver (2.42.0)
@@ -30,5 +44,6 @@ PLATFORMS
 DEPENDENCIES
   ci_reporter
   compass
+  rspec
   selenium-webdriver
   test-unit
