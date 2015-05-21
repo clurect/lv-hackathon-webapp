@@ -6,11 +6,15 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 			className: 'nav-wrapper',
 			template: _.template(template),
 			events: {
+				'click #menu-btn': 'showNavMenu',
 				'click a': 'handleSelected'
 			},
-			handleSelected: function(e){
+			handleSelected: function(e) {
 				return true;
-			}
+			},
+		    showNavMenu: function() {
+		      
+		    }
 		});
 	}
 );
