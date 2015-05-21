@@ -27,6 +27,7 @@ require(['app', 'router', 'controller/popupController', 'controller/serviceContr
     this.router = new Router();
     this.popups = new PopupController();
     this.service = new ServiceController();
+    this.resources = App.Resources;
     this.vent.trigger('route:startup');
   });
   App.start();
