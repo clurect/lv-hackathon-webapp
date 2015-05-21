@@ -3,9 +3,7 @@ define(function (require) {
   var template = require('text!../../html/header.html');
 
   return Backbone.Marionette.ItemView.extend({
-    id: 'header',
-    tagName: 'div',
-    className: '',
+    className: 'header-content',
     template: _.template(template),
 
     events: {
