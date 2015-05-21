@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 
   var yeomanConfig = {
     app: 'app',
-    dist: 'dist'
+    dist: 'dist',
+    server: process.env.CATALINA_HOME + '/webapps/hackathon/'
   };
 
   grunt.initConfig({
@@ -219,7 +220,17 @@ module.exports = function (grunt) {
             src: ['.tmp/css/{,*/}*.css']
           }
         ]
-      }
+      },
+			app: {
+				files: [
+					{
+						dest: '<%- yeoman.server %>',
+						cwd: '<%- yeoman.dist %>',
+						src: ['**'],
+						expand: true
+					}
+				]
+			}
     },
     rev: {
       dist: {
@@ -282,6 +293,13 @@ module.exports = function (grunt) {
     'clean:dist',
     'compass:dev',
     'copy:dev'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'clean:dist',
+    'compass:dev',
+    'copy:dev',
+    'copy:app'
   ]);
 
   grunt.registerTask('selenium', [
