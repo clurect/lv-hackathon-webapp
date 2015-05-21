@@ -10,11 +10,10 @@ define(function (require) {
       App.views = {};
       App.views.main = new MainView();
       App.views.header = new HeaderView();
-      App.containerRegion.show(App.views.main);
-      App.views.main.headerRegion.show(App.views.header);
     },
     showIndex: function () {
-      
+      App.containerRegion.show(App.views.main);
+      App.views.main.headerRegion.show(App.views.header);
     },
     showAbout: function () {
 
