@@ -4,7 +4,8 @@ define(function (require) {
   return Backbone.Marionette.AppRouter.extend({
     controller: new BaseController(),
     loggedInRoutes: {
-      '': 'showIndex'
+      '': 'showIndex',
+      'newPost': 'newPost'
     },
     loggedOutRoutes: {
       '': 'showLogin',
