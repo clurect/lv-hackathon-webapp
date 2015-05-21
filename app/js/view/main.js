@@ -6,7 +6,7 @@ define(function (require) {
   var HeaderView = require('view/header');
 
   return Backbone.Marionette.Layout.extend({
-    className: '',
+    className: 'row',
     template: _.template(template),
     regions: {
       'headerRegion': '.header',
