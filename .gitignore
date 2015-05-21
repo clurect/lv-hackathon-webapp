@@ -4,3 +4,7 @@ dist
 .sass-cache
 app/bower_components
 .tmp/
+**/.DS_STORE
+build
+app/lib
+Gemfile.lock
