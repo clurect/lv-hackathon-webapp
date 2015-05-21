@@ -18,5 +18,4 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'bootstrap', 'lv-widge
   });
 
   return App;
-
 });

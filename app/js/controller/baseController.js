@@ -2,6 +2,7 @@ define(function (require) {
   var App = require('app');
   var HeaderView = require('view/header');
   var MainView = require('view/main');
+  var LoginView = require('view/login');
 
   return Backbone.Marionette.Controller.extend({
 
@@ -17,6 +18,10 @@ define(function (require) {
     },
     showAbout: function () {
 
+    },
+    showLogin: function() {
+      console.log("showing login");
+      App.contentRegion.show(new LoginView());
     }
   });
 });
