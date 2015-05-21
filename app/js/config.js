@@ -9,6 +9,7 @@ require.config({
     'backbone.babysitter': '../lib/backbone.babysitter/lib/backbone.babysitter',
     'marionette': '../lib/marionette/lib/core/amd/backbone.marionette',
     'lv-widgets': '../lib/lv-widgets/dist/lv-widgets',
+    'templates': '../html',
 
     //Plugins
     'text': '../lib/requirejs-text/text'
@@ -21,10 +22,11 @@ require.config({
   }
 });
 
-require(['app', 'router', 'controller/popupController'], function (App, Router, PopupController) {
+require(['app', 'router', 'controller/popupController', 'controller/serviceController'], function (App, Router, PopupController, ServiceController) {
   App.addInitializer(function () {
     this.router = new Router();
     this.popups = new PopupController();
+    this.service = new ServiceController();
     this.vent.trigger('route:startup');
   });
   App.start();

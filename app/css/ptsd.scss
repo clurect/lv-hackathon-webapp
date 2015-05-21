@@ -12,6 +12,8 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
 $header-height: 48px;
 $footer-height: 24px;
 
+@import 'component/login';
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
