@@ -7,7 +7,8 @@ define(function (require) {
     template: _.template(template),
     events: {
       'submit form': 'onSubmitPost',
-      'click .moods label': 'onMoodClick'
+      'click .moods label': 'onMoodClick',
+      'click .cancel-button': 'onCancelClick'
     },
     ui: {
       inputs: '[data-attr]',
@@ -26,12 +27,18 @@ define(function (require) {
         "author": "me",
         "type": type,
         "date": Date.now()
-      }));
+      })).then(function() {
+        App.router.navigate('', { trigger: true });
+      });
       e.preventDefault();
     },
     onMoodClick: function(e) {
       this.ui.moods.removeClass('active');
       $(e.currentTarget).addClass('active');
+    },
+    onCancelClick: function(e) {
+      e.preventDefault();
+      App.router.navigate('', { trigger: true });
     },
     serialize: function() {
       var serializedOut = {};
