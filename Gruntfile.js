@@ -3,6 +3,7 @@ var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
+var pkg = require('./package.json');
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -12,10 +13,8 @@ var mountFolder = function (connect, dir) {
 // templateFramework: 'handlebars'
 
 module.exports = function (grunt) {
-    // load all grunt tasks
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-    // show elapsed time at the end
-    require('time-grunt')(grunt);
+    
+   
 
     // configurable paths
     var yeomanConfig = {
@@ -25,6 +24,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
+        pkg: pkg,
 
         // watch list
         watch: {
@@ -255,6 +255,12 @@ module.exports = function (grunt) {
                         'bower_components/requirejs/require.js'
                     ]
                 }]
+            },
+            tomcat: {
+                files: [{
+                    dest: process.env.CATALINA_HOME + '/webapps/',
+                    src:'build/hackathon.war'
+                }]
             }
         },
 
@@ -275,15 +281,45 @@ module.exports = function (grunt) {
                     '.tmp/scripts/templates.js': ['templates/**/*.hbs']
                 }
             }
+        },
+        compress: {
+            war: {
+                options: {
+                    archive: 'build/<%= pkg["artifact-name"] %>.war',
+                    mode: 'zip'
+                },
+                files: [{
+                    cwd: 'dist',
+                    expand: true,
+                    src: ['**/*']
+                }]
+            }
+        }, //end compress
+        tomcat_deploy: {
+            host: 'localhost',
+            login: 'admin',
+            password: 'Agilexadmin99$',
+            path: '/<%= pkg["artifact-name"] %>',
+            port: 8080,
+            dist: 'dist',
+            war: 'build/<%= pkg["artifact-name"] %>.war',
+            deploy: '/manager/text/deploy',
+            undeploy: '/manager/text/undeploy'
         }
     });
+
+    // load all grunt tasks
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    // show elapsed time at the end
+    require('time-grunt')(grunt);
+
 
     grunt.registerTask('createDefaultTemplate', function () {
         grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
     });
 
     // starts express server with live testing via testserver
-    grunt.registerTask('default', function (target) {
+    grunt.registerTask('live', function (target) {
 
         // what is this??
         if (target === 'dist') {
@@ -327,5 +363,6 @@ module.exports = function (grunt) {
         'copy',
         'usemin'
     ]);
+    grunt.registerTask('default', ['build', 'compress:war', 'tomcat_redeploy']);
 
 };
