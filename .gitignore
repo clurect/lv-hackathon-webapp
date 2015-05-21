@@ -6,4 +6,8 @@ app/bower_components
 .tmp/
 npm-debug.log
 .DS_Store
+<<<<<<< HEAD
 build/hackathon.war
+=======
+build
+>>>>>>> 17d1d46eb63cdf1c943bbe70088a35ac0bbf7e62
