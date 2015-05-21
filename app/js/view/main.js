@@ -5,7 +5,7 @@ define(function (require) {
   var Post = require('model/post');
   var NavMenu = require('view/navMenu');
   return Backbone.Marionette.Layout.extend({
-    className: '',
+    className: 'row',
     template: _.template(template),
     regions: {
       'menuRegion': '#menu',
