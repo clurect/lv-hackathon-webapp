@@ -1,23 +1,19 @@
 $icon-font-path: "../lib/sass-bootstrap/fonts/";
+@import 'variables';
 @import 'agilex-font-icon.css';
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'lv-widgets/src/css/lv-widgets';
+
+//# Components
+@import 'component/login';
+@import 'component/new_post';
+
 @font-face {
   font-family: 'EmojiSymbols';
   src: url('../fonts/emojisymbols-regular.woff');
   font-weight: normal;
   font-style: normal;
 }
-
-$header-height: 48px;
-$footer-height: 24px;
-
-$teal: #0099CC;
-$red: #BB1D00;
-$dark-teal: #005875;
-$light-teal: #03C0FF;
-$gold: #FFB400;
-$dark-gold: #BB8400;
 
 .browsehappy {
     margin: 0.2em 0;
@@ -90,8 +86,6 @@ $dark-gold: #BB8400;
     height: 100%;
     position: fixed;
 }
-
-
 
 .header-fixed {
     background-color: #444;
@@ -167,21 +161,6 @@ $dark-gold: #BB8400;
     width: 50px;
 }
 
-button {
-    background: transparent;
-    border: 0 none;
-    overflow: hidden;
-    
-    .btn-icon {
-        font-size: 20px;
-        margin-right: 10px;
-        
-        &.new-post:before {
-            content: '+';
-        }
-    }
-}
-
 .background-gradient {
     background-image: -webkit-gradient(
     	linear,
@@ -197,59 +176,31 @@ button {
     background-image: linear-gradient(to right bottom, $dark-teal 0%, $teal 100%);
 }
 
-.login-page {
-    h1 {
-        color: #ffffff;
-		margin: 0;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    h2 {
-        color: $dark-gold;
-        font-style: italic;
-		font-size: 25px;
-		margin: 15px 0;
-        text-align: center;
-    }
-	
-	p {
-		color: $dark-teal;
-		font-size: 20px;
-		margin: 0 50px;
-	}
-    
-    button {
-        background-color: $dark-gold;
-		border-radius: 10px;
-        color: #fff;
-        display: block;
-        font-size: 20px;
-		margin: 15px auto;
-		padding: 20px;
-    }
-}
-
 .vo-only {
     position: absolute;
     left: -2000px;
 }
 .emoticon {
     font-family:'EmojiSymbols';
-    font-size:80px;
+    font-size: 48px;
 }
 .angry:before {
     content:"\1F620";
+    color: $red;
 }
 .happy:before {
-    content:'\1F600;';
+    content:'\1F600';
+    color: $gold;
 }
 .sad:before {
-    content:'\1F62D;';
+    content:'\1F62D';
+    color: $teal;
 }
 .indifferent:before {
-    content:'\1F610;';
+    content:'\1F610';
+    color: $grey;
 }
 .anxious:before {
-    content: '\1F625;';
+    content: '\1F625';
+    color: $dark-gold;
 }

@@ -3,12 +3,15 @@ define(function (require) {
   var template = require('text!tmpl/newPost.html');
 
   return Backbone.Marionette.ItemView.extend({
+    className: 'container new-post-page',
     template: _.template(template),
     events: {
-      'submit form': 'onSubmitPost'
+      'submit form': 'onSubmitPost',
+      'click .moods label': 'onMoodClick'
     },
     ui: {
-      inputs: '[data-attr]'
+      inputs: '[data-attr]',
+      moods: '.moods label'
     },
     templateHelpers: function() {
       var type = Backbone.Marionette.getOption(this, 'type');
@@ -25,6 +28,10 @@ define(function (require) {
         "date": Date.now()
       }));
       e.preventDefault();
+    },
+    onMoodClick: function(e) {
+      this.ui.moods.removeClass('active');
+      $(e.currentTarget).addClass('active');
     },
     serialize: function() {
       var serializedOut = {};
