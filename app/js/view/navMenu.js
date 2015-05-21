@@ -12,13 +12,10 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 				'click a': 'handleSelected'
 			},
 			closeNavMenu: function() {
-				$('body').addClass('nav-open');	
-			},
-			handleSelected: function(e) {
-				return false;
+				$('body').removeClass('nav-open');	
 			},
 		    showNavMenu: function() {
-		      
+		      	$('body').addClass('nav-open');
 		    }
 		});
 	}
