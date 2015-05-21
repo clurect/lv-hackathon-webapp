@@ -2,6 +2,13 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
 @import 'agilex-font-icon.css';
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'lv-widgets/src/css/lv-widgets';
+@font-face {
+  font-family: 'emojis';
+  src: url('../fonts/emojisymbols-regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $header-height: 48px;
 $footer-height: 24px;
 
