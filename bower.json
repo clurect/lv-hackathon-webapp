@@ -18,5 +18,5 @@
     "sinon": "~1.7.3"
   },
   "devDependencies": {},
-  "directory": "y"
+  "directory": "bower_components"
 }
