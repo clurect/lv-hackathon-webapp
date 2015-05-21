@@ -38,9 +38,7 @@ require([
       this.router = new Router();
       this.popups = new PopupController();
       this.service = new ServiceController();
-
       App.processRoutes();
-
       this.vent.trigger('route:startup');
     });
     App.start();

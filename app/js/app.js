@@ -7,7 +7,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'bootstrap', 'lv-widge
 
   App.AjaxLoader = new LV.AjaxLoader();
   App.Resources = new LV.Resources({path: 'MobileHealthPlatformWeb'});
-  App.Session = new LV.Session({resources: App.Resources});
 
   App.addRegions({
     containerRegion: '#container'
