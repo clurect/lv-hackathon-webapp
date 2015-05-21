@@ -10,10 +10,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'bootstrap', 'lv-widge
   App.Session = new LV.Session({resources: App.Resources});
 
   App.addRegions({
-    contentRegion: '#content',
-    headerRegion: 'header',
-    footerRegion: 'footer',
-    popupRegion: new LV.PopupRegion({el: '#popup-region'})
+    containerRegion: '#container'
   });
 
   App.vent.on('route:startup', function () {
