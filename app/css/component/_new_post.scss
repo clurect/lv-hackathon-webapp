@@ -1,0 +1,22 @@
+@import '../variables';
+
+.new-post-page {
+
+	.moods {
+		label {
+			border-radius: 6px;
+			padding: 0 12px;
+			border: 1px solid transparent;
+			transition: border-color 1s;
+		}
+
+		label.active {
+			border-color: $light-teal;
+			box-shadow: 0 0 4px $light-teal;
+		}
+
+		.mood {
+			display: none;
+		}
+	}
+}

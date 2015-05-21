@@ -1,0 +1,14 @@
+button {
+    background: transparent;
+    border: 0 none;
+    overflow: hidden;
+    
+    .btn-icon {
+        font-size: 20px;
+        margin-right: 10px;
+        
+        &.new-post:before {
+            content: '+';
+        }
+    }
+}

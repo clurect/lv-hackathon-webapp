@@ -12,18 +12,20 @@ define(function (require) {
       App.views.main = new MainView();
       App.views.navMenu = new NavMenu();
       App.views.loginView = new LoginView();
-      App.views.newPostView = new NewPostView();
+    },
+    showLogin: function() {
+      App.containerRegion.show(App.views.loginView);
     },
     showIndex: function() {
       App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(App.views.main);
     },
-    showLogin: function() {
-      App.containerRegion.show(App.views.loginView);
-    },
-    newPost: function() {
+    newPost: function(type) {
+      var newPostView = new NewPostView({
+        type: type
+      });
       App.containerRegion.show(App.views.navMenu);
-      App.containerRegion.show(App.views.newPostView);
+      App.containerRegion.show(newPostView);
     }
   });
 });

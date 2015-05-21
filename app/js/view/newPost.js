@@ -3,19 +3,35 @@ define(function (require) {
   var template = require('text!tmpl/newPost.html');
 
   return Backbone.Marionette.ItemView.extend({
+    className: 'container new-post-page',
     template: _.template(template),
     events: {
-      'submit form': 'onSubmitPost'
+      'submit form': 'onSubmitPost',
+      'click .moods label': 'onMoodClick'
     },
     ui: {
-      inputs: '[data-attr]'
+      inputs: '[data-attr]',
+      moods: '.moods label'
+    },
+    templateHelpers: function() {
+      var type = Backbone.Marionette.getOption(this, 'type');
+      return {
+        'type': type
+      };
     },
     onSubmitPost: function(e) {
+      var type = Backbone.Marionette.getOption(this, 'type') || 'ask-a-doctor';
+
       App.service.newPost(_.extend(this.serialize(), {
         "author": "me",
+        "type": type,
         "date": Date.now()
       }));
       e.preventDefault();
+    },
+    onMoodClick: function(e) {
+      this.ui.moods.removeClass('active');
+      $(e.currentTarget).addClass('active');
     },
     serialize: function() {
       var serializedOut = {};
@@ -25,6 +41,10 @@ define(function (require) {
         switch (dataAttr) {
           case 'mood':
             val = $('input[data-attr="mood"]:checked').val();
+            break;
+          case 'isPublic':
+            val = $e.is(':checked');
+            break;
           default:
             val = $e.val();
         }

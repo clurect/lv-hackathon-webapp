@@ -36,13 +36,13 @@ define(function (require) {
         });
     },
     newPost: function(payload) {
-      var endpoint = 'ptsd-0.0.1/posts';
+      var endpoint = '/ptsd-0.0.1/posts';
 
       var promise = $.ajax({
         type: 'POST',
         contentType: 'application/json; charset=UTF-8',
         url: endpoint,
-        data: payload,
+        data: JSON.stringify(payload),
         dataType: 'json'
       });
 

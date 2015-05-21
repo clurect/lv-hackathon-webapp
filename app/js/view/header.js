@@ -6,11 +6,16 @@ define(function (require) {
     className: 'header-content',
     template: _.template(template),
     events: {
-      'click #new-post': 'newPost'
+      'click #new-post': 'newPost',
+      'click #ask-doctor': 'askADoctor'
     },
     newPost: function(e) {
+      App.router.navigate('#new-post', { trigger: true });
       e.preventDefault();
-      App.router.navigate('#newPost', { trigger: true });
+    },
+    askADoctor: function(e) {
+      App.router.navigate('#new-post/ask-a-doctor', { trigger: true });
+      e.preventDefault();
     }
   });
 });
