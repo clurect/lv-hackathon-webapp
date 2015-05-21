@@ -2,14 +2,19 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 	function(Backbone, Marionette, $, _, template){
 		'use strict';
 		return Backbone.Marionette.ItemView.extend({
-			tagName: 'div',
-			className: 'nav-wrapper',
 			template: _.template(template),
+			ui: {
+				'menu': '#menu'
+			},
 			events: {
+				'click #close-btn': "closeNavMenu",
 				'click a': 'handleSelected'
 			},
-			handleSelected: function(e){
-				return true;
+			closeNavMenu: function() {
+				$('body').addClass('nav-open');	
+			},
+			handleSelected: function(e) {
+				return false;
 			}
 		});
 	}
