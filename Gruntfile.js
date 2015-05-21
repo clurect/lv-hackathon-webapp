@@ -260,8 +260,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', [
-    'shell:selenium',
-    'build'
+    'shell:deploywar'
   ]);
 
   grunt.registerTask('build', [

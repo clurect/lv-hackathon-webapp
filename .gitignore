@@ -8,3 +8,4 @@ app/bower_components
 build
 app/lib
 Gemfile.lock
+.gradle
