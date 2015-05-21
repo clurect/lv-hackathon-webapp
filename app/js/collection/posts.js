@@ -5,7 +5,7 @@ define(function (require) {
     model: Post,
     url: "http://localhost:8080/ptsd-0.0.1/posts",
     onShow: function() {
-      console.log('feed collection!');
+
     }
   });
 });
