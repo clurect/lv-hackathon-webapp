@@ -3,6 +3,7 @@ define(function (require) {
   var template = require('text!tmpl/main.html');
   var Feed = require('view/feed');
   var Post = require('model/post');
+  var NavMenu = require('view/navMenu');
   return Backbone.Marionette.Layout.extend({
     className: '',
     template: _.template(template),
@@ -12,7 +13,11 @@ define(function (require) {
       'postListRegion': '.post-list'
     },
     events: {
-      
+      'click #menu-btn': 'showNavMenu'
+    },  
+    showNavMenu: function () {
+      var navMenu = new NavMenu();
+      this.menuRegion.show(navMenu);
     },
     onShow: function() {
       var feed = new Feed();

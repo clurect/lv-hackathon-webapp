@@ -1,4 +1,6 @@
-define(['jquery', 'underscore', 'backbone', 'marionette', 'bootstrap', 'lv-widgets'], function () {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'bootstrap', 'lv-widgets'], 
+
+function () {
 
   var App = new Backbone.Marionette.Application();
 

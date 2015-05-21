@@ -10,6 +10,9 @@ require.config({
     'marionette': '../lib/marionette/lib/core/amd/backbone.marionette',
     'lv-widgets': '../lib/lv-widgets/dist/lv-widgets',
     'tmpl':'../html',
+    
+    //Views
+    'navMenu': 'view/navMenu',
 
     //Plugins
     'text': '../lib/requirejs-text/text'

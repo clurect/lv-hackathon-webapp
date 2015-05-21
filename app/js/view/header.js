@@ -7,6 +7,7 @@ define(function (require) {
     template: _.template(template),
 
     events: {
+      'click .menu-btn': 'showNavMenu'
     }
 
   });
