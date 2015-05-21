@@ -3,5 +3,19 @@
         <div class="col-xs-12">
             <a id="login-button" href="#">Login</a>
         </div>
+
+        <form id="logonForm" name="logonForm" data-ajax="false" action="/ssoeproxy/j_spring_security_check" method="post">
+            <input data-role="none" required="" placeholder="Username" spellcheck="false" id="name-c" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" name="j_username" value="" class="empty ui-input-text ui-body-null
+            ui-corner-all ui-shadow-inset ui-body-c">
+            <label for="name-c">Username</label>
+            <input required="" placeholder="Password" id="password" type="password" name="j_password" value="">
+            <label for="password">Password</label>
+            <div>
+                
+                <button id="loginButton">
+                    Sign In
+                </button>
+            </div>
+        </form>
     </div>
 </div>

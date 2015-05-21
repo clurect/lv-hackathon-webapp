@@ -9,6 +9,10 @@ define(function (require) {
     logout: function() {
       var App = require('app');
       App.Resources.logout();
+    },
+    getOAUTH: function() {
+        var App = require('app');
+        $.get(App.Resources.get('oauth-login').href + App.Resources.getRedirectURI());
     }
   });
 });

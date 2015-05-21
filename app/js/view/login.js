@@ -6,7 +6,11 @@ define(function (require) {
     id: 'page-login',
     template: _.template(template),
     events: {
-      'click #login-button': 'onLogin'
+      'click #login-button': 'onLogin',
+      'click #login-test': 'onTestLogin'
+    },
+    onRender: function(){
+        App.service.getOAUTH();
     },
     onLogin: function(e) {
       e.preventDefault();
