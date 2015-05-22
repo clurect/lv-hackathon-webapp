@@ -41,9 +41,13 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
     width: 25%;
     transition: 500ms ease all;
     -webkit-transition: 500ms ease all;
+    z-index: 10000;
     .menu-btn {
         position: absolute;
-        right: -29px;
+        right: -45px;
+        font-size: 2em;
+        width: 45px;
+        padding: 0;
     }
     .search-wrapper {
         color: #777;
