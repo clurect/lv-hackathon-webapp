@@ -4,7 +4,6 @@ define(function (require) {
   var Feed = require('view/feed');
   var HeaderView = require('view/header');
   var Resources = require('collection/Resources');
-  var Post = require('model/post');
 
   return Backbone.Marionette.Layout.extend({
     template: _.template(template),

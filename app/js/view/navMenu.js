@@ -7,16 +7,16 @@ define(['backbone', 'marionette', 'jquery', 'underscore', 'text!../../html/navMe
 				'menu': '#menu'
 			},
 			events: {
-				'click #close-menu-btn': "closeNavMenu",
-				'click #open-menu-btn': 'showNavMenu',
+				'click #close-menu-btn, #open-menu-btn': "toggleNavMenu",
 				'click a': 'handleSelected'
 			},
-			closeNavMenu: function() {
-				$('body').removeClass('nav-open');	
-			},
-		    showNavMenu: function() {
-		      	$('body').addClass('nav-open');
-		    }
+			toggleNavMenu: function(e) {
+				if ($('.nav-open').length > 0) {
+					$('body').removeClass('nav-open');						
+				} else {
+					$('body').addClass('nav-open');
+				}
+			}
 		});
 	}
 );

@@ -13,6 +13,7 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
 @import 'component/feed_wall';
 @import 'component/main_header';
 @import 'component/comments';
+@import 'component/post';
 
 @font-face {
   font-family: 'Emoticons';
@@ -78,6 +79,7 @@ p {
             background: none;
             border-color: #777;
             color: #FFF;
+            width: 75%;
         }
         .fa-search {
             color: inherit;

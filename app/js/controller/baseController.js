@@ -3,6 +3,7 @@ define(function (require) {
   var MainView = require('view/main');
   var LoginView = require('view/login');
   var NewPostView = require('view/newPost');
+  var ReadPostView = require('view/readPost');
   var NavMenu = require('view/navMenu');
   var CommentsView = require('view/commentsSection');
 
@@ -18,6 +19,7 @@ define(function (require) {
       App.containerRegion.show(App.views.loginView);
     },
     showIndex: function() {
+      //App.views.navMenu = new NavMenu();
       App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(App.views.main);
     },
@@ -25,8 +27,16 @@ define(function (require) {
       var newPostView = new NewPostView({
         type: type
       });
-      App.containerRegion.show(App.views.navMenu);
+      App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(newPostView);
+    },
+    readPost: function(id) {
+      var post = App.router.params('post');
+      App.menuRegion.show(App.views.navMenu);
+      var readPostView = new ReadPostView({
+        post: post
+      });
+      App.containerRegion.show(readPostView);
     },
     showComments: function (model, region) {
       var commentsView = new CommentsView({model: model});

@@ -3,7 +3,7 @@ define(function (require) {
   var template = require('text!tmpl/header.html');
 
   return Backbone.Marionette.ItemView.extend({
-    className: 'header-content',
+    className: 'header-content row-fluid',
     template: _.template(template),
     events: {
       'click #new-post': 'newPost',
