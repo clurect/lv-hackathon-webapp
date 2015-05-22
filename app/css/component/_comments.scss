@@ -1,0 +1,19 @@
+.comments-content {
+  background-color: #ececec;
+  padding: 20px;
+  
+  label {
+    color: $grey;
+  }
+  
+  button {
+    font-size: 14px;
+  }
+  
+  textarea {
+    display: block;
+    margin-bottom: 10px;
+    resize: vertical;
+    width: 100%;
+  }
+}

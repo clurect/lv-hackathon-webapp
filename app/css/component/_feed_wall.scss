@@ -3,6 +3,8 @@
 #content{
   
   .post {
+    margin-bottom: 20px;
+    position: relative;
 
     .author-information {
       margin: 0 0 20px 20px;
@@ -59,6 +61,7 @@
         border-radius: 0;
         border-right: 1px solid #2f88af;
         color: #fff;
+        font-size: 14px;
         padding: 4px 10px;
        
         &:first-child{
