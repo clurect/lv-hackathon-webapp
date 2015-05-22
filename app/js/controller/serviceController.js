@@ -63,6 +63,8 @@ define(function (require) {
 
       return promise;
     },
-    
+    getPost: function(id) {
+      return $.get('/ptsd-0.0.1/post/' + id);
+    }
   });
 });
