@@ -1,8 +1,15 @@
 @import '../variables';
 
 body {
-  background-color: $teal;
-  background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+  background: #2f88af; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #2f88af 0%, #155478 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#2f88af), color-stop(100%,#155478)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #2f88af 0%,#155478 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #2f88af 0%,#155478 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #2f88af 0%,#155478 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #2f88af 0%,#155478 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f88af', endColorstr='#155478',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  
 }
 
 .login-page {
@@ -21,27 +28,6 @@ body {
 		color: $dark-teal;
 		font-size: 14px;
 	}
-    
-    button {
-      border-image: none;
-      border-radius: 4px 4px 4px 4px;
-      border-style: solid;
-      border-width: 1px;
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-      margin-bottom: 0;
-      text-align: center;
-      vertical-align: middle;
-      font-size: 12px;
-      font-weight: 500;
-    }
-    
-    .btn-primary {
-      background-color: #FBB450;
-      background-image: -moz-linear-gradient(center top, #FBB450, #F89406);
-      border-color: #F89406 #F89406 #AD6704;
-      background-repeat: repeat-x;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    }
     
     .loginContainer {
         box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);

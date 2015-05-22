@@ -7,7 +7,6 @@ define(function (require) {
   var Post = require('model/post');
 
   return Backbone.Marionette.Layout.extend({
-    className: 'row',
     template: _.template(template),
     regions: {
       'headerRegion': '.header',
