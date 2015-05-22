@@ -8,7 +8,7 @@ define(function (require) {
     template: _.template(template),
     className: 'comments-content',
     itemView: CommentView,
-    itemView: '.comments-list',
+    itemViewContainer: '.comments-list',
     collection: new Collection(),
   });
 });

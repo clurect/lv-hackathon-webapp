@@ -3,6 +3,7 @@ define(function (require) {
   var template = require('text!../../html/comment.html');
   
   return Backbone.Marionette.ItemView.extend({
-    template: _.template(template)
+    template: _.template(template),
+    className: 'comment'
   });
 });
