@@ -23,11 +23,11 @@ define(function (require) {
     onSubmitPost: function(e) {
       var type = Backbone.Marionette.getOption(this, 'type') || 'ask-a-doctor';
 
-      App.service.newPost(_.extend(this.serialize(), {
+      App.service.request(_.extend(this.serialize(), {
         "author": "me",
         "type": type,
         "date": Date.now()
-      })).then(function() {
+      }), 'PUT').then(function() {
         App.router.navigate('', { trigger: true });
       });
       e.preventDefault();
