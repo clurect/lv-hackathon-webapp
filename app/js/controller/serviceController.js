@@ -60,6 +60,7 @@ define(function (require) {
       });
 
       return promise;
-    }
+    },
+    
   });
 });
