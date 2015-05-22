@@ -8,7 +8,11 @@ define(function (require) {
     regions: {
       'commentsRegion': '.comments-section'
     },
+  	ui: {
+  		'favorite': 'add-favorite'
+  	},
     events: {
+      'click @ui.favorite': 'onFavoriteClick',
       'click #add-comment:not(.btn-primary)': 'showComments',
       'click #add-comment.btn-primary': 'hideComments'
     },
@@ -18,7 +22,10 @@ define(function (require) {
     },
     hideComments: function (e) {
       $(e.currentTarget).removeClass('btn-primary');
-      this.commentsRegion.close();     
+      this.commentsRegion.close();
+    },
+    onFavoriteClick: function(e) {
+    	e.preventDefault();
     }
   });
 });
