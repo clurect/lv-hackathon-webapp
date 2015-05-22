@@ -3,6 +3,6 @@ define(function (require) {
   var Post = require('model/post');
   return Backbone.Collection.extend({
     model: Post,
-    url: "http://localhost:8080/ptsd-0.0.1/posts"
+    url: "/ptsd-0.0.1/posts"
   });
 });

@@ -4,8 +4,7 @@ define(function (require) {
   return Backbone.Marionette.Controller.extend({
     login: function() {
       var App = require('app');
-      var hackUrl = App.Resources.get('resource-directory').href.substr(0,App.Resources.get('resource-directory').href.indexOf('rest'))
-      window.location = hackUrl+'/oauthlogin' + App.Resources.getRedirectURI();
+      window.location = App.Resources.get('oauth-login').href + App.Resources.getRedirectURI();
     },
     logout: function() {
       var App = require('app');
@@ -13,8 +12,7 @@ define(function (require) {
     },
     getOAUTH: function() {
         var App = require('app');
-        var hackUrl = App.Resources.get('resource-directory').href.substr(0,App.Resources.get('resource-directory').href.indexOf('rest'))
-        return $.get(hackUrl+'/oauthlogin' + App.Resources.getRedirectURI());
+        return $.get(App.Resources.get('oauth-login').href + App.Resources.getRedirectURI());
     },
     checkLogin: function(username, password){
          var App = require('app');
@@ -50,10 +48,10 @@ define(function (require) {
             });
          });
     },
-    request: function(payload, method, url) {
+    request: function(payload, method) {
       method = method || 'POST';
         
-      var endpoint = url || '/ptsd-0.0.1/posts';
+      var endpoint = '/ptsd-0.0.1/posts';
 
       var promise = $.ajax({
         type: method,
