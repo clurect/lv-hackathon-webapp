@@ -4,7 +4,8 @@ define(function (require) {
   return Backbone.Marionette.Controller.extend({
     login: function() {
       var App = require('app');
-      window.location = App.Resources.get('oauth-login').href + App.Resources.getRedirectURI();
+      var hackUrl = App.Resources.get('resource-directory').href.substr(0,App.Resources.get('resource-directory').href.indexOf('rest'))
+      window.location = hackUrl+'/oauthlogin' + App.Resources.getRedirectURI();
     },
     logout: function() {
       var App = require('app');
@@ -12,7 +13,8 @@ define(function (require) {
     },
     getOAUTH: function() {
         var App = require('app');
-        return $.get(App.Resources.get('oauth-login').href + App.Resources.getRedirectURI());
+        var hackUrl = App.Resources.get('resource-directory').href.substr(0,App.Resources.get('resource-directory').href.indexOf('rest'))
+        return $.get(hackUrl+'/oauthlogin' + App.Resources.getRedirectURI());
     },
     checkLogin: function(username, password){
          var App = require('app');
