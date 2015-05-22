@@ -43,6 +43,10 @@ p {
     transition: 500ms ease all; 
 }
 
+.nav-open {
+    overflow-x: hidden;
+}
+
 .nav-wrapper {
     background: #3F484F;
     height: 100vh;
@@ -54,6 +58,7 @@ p {
     z-index: 10000;
     .menu-btn {
         position: absolute;
+        color: #fff;
         right: -45px;
         font-size: 2em;
         width: 45px;
@@ -123,6 +128,10 @@ p {
     position: fixed;
 }
 
+.header .header-content h1 {
+	color: #fff;
+}
+
 .header-fixed {
     background-color: #444;
     position: fixed;
@@ -161,6 +170,11 @@ p {
             font-weight: 800;
             color: #fff;
         }
+    }
+}
+.filters {
+    button {
+        color: #FFF;
     }
 }
 
