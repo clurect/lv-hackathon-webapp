@@ -14,9 +14,9 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
 @import 'component/main_header';
 
 @font-face {
-  font-family: 'EmojiSymbols';
-  src: url('../fonts/emojisymbols-regular.woff');
-  font-weight: normal;
+  font-family: 'Emoticons';
+  src: url('../fonts/emoticons.ttf') format("truetype");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -216,28 +216,29 @@ p {
     left: -2000px;
 }
 .emoticon {
-    font-family:'EmojiSymbols';
+    font-family: 'Emoticons';
     font-size: 48px;
-}
-.mood-3:before { //angry
-    content:"\1F620";
-    color: $red;
+    font-weight: 100;
 }
 .mood-1:before { //happy
-    content:'\1F600';
+    content: 'A';
     color: $gold;
 }
 .mood-2:before { //sad
-    content:'\1F62D';
+    content: 'd';
     color: $teal;
 }
+.mood-3:before { //angry
+    content: 'W';
+    color: $red;
+}
 .mood-4:before { //indifferent
-    content:'\1F610';
+    content: 'C';
     color: $grey;
 }
 .mood-5:before { //anxious
-    content: '\1F625';
-    color: $dark-gold;
+    content: 'e';
+    color: $green;
 }
 
 @media (max-width: 30.69rem){ /* 491px */
