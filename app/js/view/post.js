@@ -55,7 +55,9 @@ define(function (require) {
         $target.addClass('btn-primary');
       }
       
-      App.service.request({}, method, App.favorites.url + '/' + this.model.get('id'));
+      App.service.request({}, method, App.favorites.url + '/' + this.model.get('id')).then(function () {
+        App.favorites.fetch();
+      });
     },
     onReadPostClick: function(e) {
       App.router.navigate('#read-post/' + this.model.get('id'), { 

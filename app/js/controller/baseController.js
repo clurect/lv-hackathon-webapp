@@ -51,11 +51,26 @@ define(function (require) {
       region.show(commentsView);
     },
     showFavorites: function () {
+      if (!App.favorites) {
+        this.createFavorites();
+      }
+      
       var feed = new Feed({collection: App.favorites});
       
       App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(feed);
       App.favorites.fetch();
+    },
+    createFavorites: function () {
+      App.favorites = new Backbone.Collection({
+        model: Backbone.Model.extend({
+          parse: function (response) {
+            response.favorite = true;
+            
+            return response;
+          }
+        })
+      });
     }
   });
 });

@@ -13,7 +13,9 @@ define(function (require) {
       'postListRegion': '.post-list'
     },
     onShow: function() {
-      App.favorites = new Backbone.Collection();
+      if (!App.favorites) {
+        App.router.controller.createFavorites();
+      }
       
       App.favorites.url = '/ptsd-0.0.1/user/8/favorites';
       
