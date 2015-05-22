@@ -19,6 +19,7 @@ define(function (require) {
       App.containerRegion.show(App.views.loginView);
     },
     showIndex: function() {
+      //App.views.navMenu = new NavMenu();
       App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(App.views.main);
     },
