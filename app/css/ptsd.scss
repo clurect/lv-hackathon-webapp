@@ -4,6 +4,9 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'lv-widgets/src/css/lv-widgets';
 
+//# Elements
+@import 'element/button';
+
 //# Components
 @import 'component/login';
 @import 'component/new_post';
