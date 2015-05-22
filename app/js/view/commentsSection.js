@@ -6,6 +6,7 @@ define(function (require) {
   
   return Backbone.Marionette.CompositeView.extend({
     template: _.template(template),
+    className: 'comments-content',
     itemView: CommentView,
     itemView: '.comments-list',
     collection: new Collection(),
