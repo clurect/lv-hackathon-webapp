@@ -31,6 +31,9 @@ define(function (require) {
     },
     showComments: function (e) {
       $(e.currentTarget).addClass('btn-primary');
+      this.showCommentsRegion();
+    },
+    showCommentsRegion: function() {
       App.router.controller.showComments(this.model, this.commentsRegion);
     },
     hideComments: function (e) {
