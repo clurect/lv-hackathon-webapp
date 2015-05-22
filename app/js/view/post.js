@@ -21,7 +21,7 @@ define(function (require) {
   	ui: {
       'favorite': '.add-favorite',
       'readPost': '.read-post',
-  		'addComment': '.read-post'
+  		'addComment': '.add-comment'
   	},
     events: {
       'click @ui.favorite': 'onFavoriteClick',

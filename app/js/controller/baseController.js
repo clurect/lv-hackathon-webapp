@@ -42,18 +42,6 @@ define(function (require) {
       var commentsView = new CommentsView({model: model});
       
       region.show(commentsView);
-      
-      commentsView.collection.reset([
-        {
-          dateObj: {
-            day: '22',
-            month: 'May',
-            year: '2015'
-          },
-          author: 'Keith Brown',
-          message: 'This is a comment'
-        }
-      ]);
     }
   });
 });
