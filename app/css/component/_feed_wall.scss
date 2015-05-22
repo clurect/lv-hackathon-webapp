@@ -3,7 +3,7 @@
 #content{
   
   .post {
-    margin-bottom: 20px;
+    margin: 0 0 20px 20px;
 
     .author-information {
       margin: 0 0 20px 20px;
@@ -29,6 +29,14 @@
       padding: 0;
       padding-right: 10px;
       color:#FFF;
+      text-align: right;
+      text-shadow: 2px 2px 10px black;
+      font-size: 0.8em;
+      .day {
+        font-size: 28px;
+        line-height: 28px;
+      }
+
     }
     
     .post-content {
@@ -70,12 +78,34 @@
     }
   }
   
-  .link{
-    margin-left: 20px;
-    max-height: 200px;
-    overflow: hidden;
-    background: rgba(0,0,0,0.2);
-    color: #fff;
-    margin-bottom: 20px;
+  .link-container {
+      margin: 0 0 20px 20px;
+      
+      .link{
+        max-height: 200px;
+        overflow: hidden;
+        background: rgba(0,0,0,0.2);
+        color: #fff;
+        
+        article {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .fa-question {
+              font-size: 10em;
+            }
+        }
+        
+        footer {
+          span {
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid #2f88af;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+          }
+        }
+      }
   }
 }
