@@ -3,6 +3,8 @@
 #content{
   
   .post {
+    margin-bottom: 20px;
+    position: relative;
 
     .author-information {
       margin: 0 0 20px 20px;
@@ -29,7 +31,7 @@
       padding-right: 10px;
       color:#FFF;
       text-align: right;
-      text-shadow: 2px 2px 10px black;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
       font-size: 0.8em;
       .day {
         font-size: 28px;
@@ -59,6 +61,7 @@
         border-radius: 0;
         border-right: 1px solid #2f88af;
         color: #fff;
+        font-size: 14px;
         padding: 4px 10px;
        
         &:first-child{
@@ -71,7 +74,6 @@
       }
     }
     .post-container {
-        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
         margin-bottom: 20px;
         padding: 0;
     }
