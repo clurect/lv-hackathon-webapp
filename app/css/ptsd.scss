@@ -177,6 +177,21 @@ p {
         }
     }
 }
+.settings-page {
+    form {
+        padding: 50px 10px 0 10px;
+        label {
+            display: block;
+            color: #FFF;
+        }
+        input {
+            width: 100%;
+        }
+        .moods label {
+            background-color: #FFF;
+        }
+    }
+}
 
 .footer-fixed {
     position: fixed;

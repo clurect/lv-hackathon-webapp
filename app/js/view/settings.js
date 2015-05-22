@@ -4,6 +4,7 @@ define(function (require) {
 
   return Backbone.Marionette.Layout.extend({
     id: 'page-settings',
+    className: 'settings-page',
     template: _.template(template)
   });
 });
