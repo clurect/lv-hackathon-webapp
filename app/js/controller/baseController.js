@@ -5,6 +5,7 @@ define(function (require) {
   var NewPostView = require('view/newPost');
   var ReadPostView = require('view/readPost');
   var NavMenu = require('view/navMenu');
+  var SettingsView = require('view/settings');
   var CommentsView = require('view/commentsSection');
 
   return Backbone.Marionette.Controller.extend({
@@ -39,9 +40,13 @@ define(function (require) {
       });
       App.containerRegion.show(readPostView);
     },
+    settings: function() {
+      var settingsView = new SettingsView();
+      App.menuRegion.show(App.views.navMenu);
+      App.containerRegion.show(settingsView);
+    },
     showComments: function (model, region) {
       var commentsView = new CommentsView({model: model});
-      
       region.show(commentsView);
     }
   });
