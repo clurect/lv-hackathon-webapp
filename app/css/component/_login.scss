@@ -1,34 +1,89 @@
 @import '../variables';
 
+body {
+  background-color: $teal;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+}
+
 .login-page {
+    
+    
     h1 {
-        color: #ffffff;
-		margin: 0;
-        padding: 20px;
-        text-align: center;
+		  margin: 0;
     }
     
     h2 {
         color: $dark-gold;
-        font-style: italic;
-		font-size: 25px;
-		margin: 15px 0;
-        text-align: center;
+    		font-size: 25px;
     }
 	
 	p {
 		color: $dark-teal;
-		font-size: 20px;
-		margin: 0 50px;
+		font-size: 14px;
 	}
     
     button {
-        background-color: $dark-gold;
-		border-radius: 10px;
-        color: #fff;
-        display: block;
-        font-size: 20px;
-		margin: 15px auto;
-		padding: 20px;
+      border-image: none;
+      border-radius: 4px 4px 4px 4px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+      margin-bottom: 0;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .btn-primary {
+      background-color: #FBB450;
+      background-image: -moz-linear-gradient(center top, #FBB450, #F89406);
+      border-color: #F89406 #F89406 #AD6704;
+      background-repeat: repeat-x;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    }
+    
+    .loginContainer {
+        box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+        padding: 43px 50px 50px 50px;
+        border-radius: 3px 40px 3px 49px;
+        -moz-border-radius: 3px 40px 3px 49px;
+        -webkit-border-radius: 3px 40px 3px 49px;
+        border: 0px solid #000000;
+        background: #fff;
+        margin-top: 100px;
+        
+        .title {
+            margin-bottom: 40px;
+            color: $dark-black;
+        }
+        
+        .rightCol {
+            display: inline-block;
+            height: 220px;
+            border-left: solid 1px lightgray;
+            padding-left: 15px;
+            
+            h4 {
+                font-size: 14px;
+                color: $gray;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+            }
+            .question {
+              margin-bottom: 20px;
+              line-height: 1.5;
+            }
+            .needhelp {
+              line-height: 1.5;
+            }
+            a {
+                text-decoration: none;
+                color: #006ea4;
+                font-size: 12px;
+            }
+        }
     }
 }

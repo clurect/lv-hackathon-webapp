@@ -12,9 +12,6 @@ define(function (require) {
     events: {
       'click #login-button': 'onLogin'
     },
-    onRender: function(){
-        App.service.getOAUTH();
-    },
     onLogin: function(e) {
       e.preventDefault();
       App.service.checkLogin(this.ui.username.val(), this.ui.password.val());

@@ -12,28 +12,41 @@ define(function (require) {
     },
     getOAUTH: function() {
         var App = require('app');
-        $.get(App.Resources.get('oauth-login').href + App.Resources.getRedirectURI());
+        return $.get(App.Resources.get('oauth-login').href + App.Resources.getRedirectURI());
     },
     checkLogin: function(username, password){
          var App = require('app');
+         //would use $.proxy but it's not working so using old school way
+         var self = this;
          
-         $.ajax({
-            type: "POST",
-            url: "/ssoeproxy/j_spring_security_check",
-            data: {
-                "j_username": username,
-                "j_password": password 
-            },
-            success: $.proxy(function(data, status, xhr) {
-                //the token returns a ETAG header
-                if(!xhr.getResponseHeader('ETag')){
-                    //it is redirecting to the deny page
-                    alert("Your username or password is wrong!");
-                } else {
-                    this.login();
+         //establish the OAUTH session
+         this.getOAUTH().then(function(){
+              //make the login call
+             $.ajax({
+                type: "POST",
+                url: "/ssoeproxy/j_spring_security_check",
+                data: {
+                    "j_username": username,
+                    "j_password": password 
+                },
+                success: function(data, status, xhr) {
+                    //the token returns a ETAG header
+                    if(!xhr.getResponseHeader('ETag')){
+                        //it is redirecting to the deny page
+                        alert("Your username or password is wrong!");
+                    } else {
+                        self.login();
+                    }
+                },
+                error: function(xhr, status, error){
+                    //call login again if this happens because the app is already
+                    //logged in but can't redirect correctly
+                    if(xhr.status == "404"){
+                        self.login();
+                    }
                 }
-            }, this)
-        });
+            });
+         });
     },
     newPost: function(payload) {
       var endpoint = '/ptsd-0.0.1/posts';
