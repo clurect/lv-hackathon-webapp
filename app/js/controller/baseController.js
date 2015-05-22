@@ -4,6 +4,7 @@ define(function (require) {
   var LoginView = require('view/login');
   var NewPostView = require('view/newPost');
   var NavMenu = require('view/navMenu');
+  var CommentsView = require('view/commentsSection');
 
   return Backbone.Marionette.Controller.extend({
 
@@ -26,6 +27,9 @@ define(function (require) {
       });
       App.containerRegion.show(App.views.navMenu);
       App.containerRegion.show(newPostView);
+    },
+    showComments: function (model, region) {
+      region.show(new CommentsView({model: model}));
     }
   });
 });
