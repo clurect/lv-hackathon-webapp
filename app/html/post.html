@@ -9,7 +9,8 @@
         Mood Rating: <%- mood %> <span class="emoticon angry"></span>
     </div>
     <div class="message">
-        <%= message %>
+        <% if(message.length > 800) {%><%= message.substr(0,800) %>... 
+        <% } else {%><%= message %><%}%>
     </div>
 </div>
 <div class="post-footer">
