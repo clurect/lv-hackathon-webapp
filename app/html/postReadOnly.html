@@ -11,23 +11,16 @@
     </div>
     <h3 class="title"><%- title %> <span class="emoticon mood-<%- mood %>"></span></h3>
     <div class="message">
-        <% if (message.length > 400) {%>
-            <%= message.substr(0,800) %>... 
-        <% } else { %>
-            <%= message %>
-        <%}%>
+        <%= message %>
     </div>
 </div>
 <div class="comments-section"></div>
-<div class="post-footer">
-    <button class="add-favorite">
-        <span class="btn-icon fa fa-star"></span>Favorite
-    </button>
-    <button class="add-comment">
-        <span class="btn-icon fa fa-comment"></span>Comment
-    </button>
-    <button class="read-post">
-        <span class="btn-icon fa fa-leanpub"></span>Read Post
-    </button>
-</div>
+    <div class="post-footer">
+        <button class="add-favorite">
+            <span class="btn-icon fa fa-star"></span>Favorite
+        </button>
+        <button class="add-comment">
+            <span class="btn-icon fa fa-comment"></span>Comment
+        </button>
+    </div>
 </div>

@@ -1,5 +1,10 @@
 <form>
   <div class="form-group">
+  	<% if (type === 'ask-a-doctor') { %>
+	  <h3>Ask A Doctor</h3>
+	<% } else { %>
+	  <h3>Write A Post</h3>
+	<% } %>
     <label for="post-title">Title</label>
     <input data-attr="title" type="text" class="form-control" id="post-title" placeholder="Enter Post Title">
   </div>

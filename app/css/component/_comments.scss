@@ -1,6 +1,11 @@
 .comments-content {
   background-color: #ececec;
-  padding: 20px;
+  color: $grey;
+  
+  h3 {
+    margin: 0;
+    padding: 20px;
+  }
   
   label {
     color: $grey;
@@ -15,5 +20,33 @@
     margin-bottom: 10px;
     resize: vertical;
     width: 100%;
+  }
+  
+  .comment {
+    padding: 20px;
+  }
+  
+  .comment-date {
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 48px;
+    padding: 10px 0;
+  }
+  
+  .add-comment-section {
+    border-top: 1px solid $dark-teal;
+    padding: 20px;
+  }
+}
+
+#content {
+  .post {
+    .comment {
+      .post-content {
+        .message {
+          text-align: left;
+        }        
+      }
+    }
   }
 }
