@@ -12,8 +12,8 @@
     "requirejs": "~2.1.10",
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1",
-    "lv-widgets": "https://bitbucket.org/longview/lv-widgets.git#edge"
+    "lv-widgets": "https://bitbucket.org/longview/lv-widgets.git#edge",
+    "moment": "~2.10.3"
   },
   "devDependencies": {}
 }
-
