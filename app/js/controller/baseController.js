@@ -6,6 +6,7 @@ define(function (require) {
   var ReadPostView = require('view/readPost');
   var NavMenu = require('view/navMenu');
   var CommentsView = require('view/commentsSection');
+  var Feed = require('view/feed');
 
   return Backbone.Marionette.Controller.extend({
 
@@ -43,6 +44,13 @@ define(function (require) {
       var commentsView = new CommentsView({model: model});
       
       region.show(commentsView);
+    },
+    showFavorites: function () {
+      var feed = new Feed({collection: App.favorites});
+      
+      App.menuRegion.show(App.views.navMenu);
+      App.containerRegion.show(feed);
+      App.favorites.fetch();
     }
   });
 });

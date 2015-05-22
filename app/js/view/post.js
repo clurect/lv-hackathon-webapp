@@ -42,6 +42,20 @@ define(function (require) {
     },
     onFavoriteClick: function(e) {
     	e.preventDefault();
+      
+      var $target = $(e.currentTarget);
+      var method = 'PUT';
+      
+      if (this.model.get('favorite')) {
+        this.model.unset('favorite');
+        $target.removeClass('btn-primary');
+        method = 'DELETE';
+      } else {
+        this.model.set('favorite', true);
+        $target.addClass('btn-primary');
+      }
+      
+      App.service.request({}, method, App.favorites.url + '/' + this.model.get('id'));
     },
     onReadPostClick: function(e) {
       App.router.navigate('#read-post/' + this.model.get('id'), { 
