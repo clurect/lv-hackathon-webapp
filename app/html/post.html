@@ -6,10 +6,11 @@
     </div>
     <h2><%- title %></h2>
     <div>
-        Mood Rating: <%- mood %> <span class="emoticon angry"></span>
+        Mood <span class="emoticon mood-<%- mood %>"></span>
     </div>
     <div class="message">
-        <%= message %>
+        <% if(message.length > 800) {%><%= message.substr(0,800) %>... 
+        <% } else {%><%= message %><%}%>
     </div>
 </div>
 <div class="post-footer">

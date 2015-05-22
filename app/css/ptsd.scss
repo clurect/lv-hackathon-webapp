@@ -178,23 +178,23 @@ $icon-font-path: "../lib/sass-bootstrap/fonts/";
     font-family:'EmojiSymbols';
     font-size: 48px;
 }
-.angry:before {
+.mood-3:before { //angry
     content:"\1F620";
     color: $red;
 }
-.happy:before {
+.mood-1:before { //happy
     content:'\1F600';
     color: $gold;
 }
-.sad:before {
+.mood-2:before { //sad
     content:'\1F62D';
     color: $teal;
 }
-.indifferent:before {
+.mood-4:before { //indifferent
     content:'\1F610';
     color: $grey;
 }
-.anxious:before {
+.mood-5:before { //anxious
     content: '\1F625';
     color: $dark-gold;
 }
