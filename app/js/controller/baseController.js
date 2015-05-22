@@ -34,7 +34,8 @@ define(function (require) {
       var post = App.router.params('post');
       App.menuRegion.show(App.views.navMenu);
       var readPostView = new ReadPostView({
-        post: post
+        post: post,
+        postID: id
       });
       App.containerRegion.show(readPostView);
     },
