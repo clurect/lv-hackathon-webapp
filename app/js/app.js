@@ -18,6 +18,10 @@ function () {
   App.vent.on('route:startup', function () {
     Backbone.history.start();
   });
+  
+  App.vent.on('show:comments', function (id) {
+    App.router.controller.showComments();
+  });
 
   return App;
 });

@@ -9,6 +9,7 @@ require.config({
     'backbone.babysitter': '../lib/backbone.babysitter/lib/backbone.babysitter',
     'marionette': '../lib/marionette/lib/core/amd/backbone.marionette',
     'lv-widgets': '../lib/lv-widgets/dist/lv-widgets',
+    'moment': '../lib/moment/moment',
     'tmpl':'../html',
     
     //Views

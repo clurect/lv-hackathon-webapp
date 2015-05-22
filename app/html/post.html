@@ -6,7 +6,7 @@
     <h3 class="title"><%- title %> <span class="emoticon mood-<%- mood %>"></span></h3>
     <div class="message">
         <% if (message.length > 400) {%>
-            <%= message.substr(0,800) %>... 
+            <%= message.substr(0, 400) %>... 
         <% } else { %>
             <%= message %>
         <%}%>
