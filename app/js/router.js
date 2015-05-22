@@ -8,7 +8,8 @@ define(function (require) {
       'new-post': 'newPost',
       'new-post/:type': 'newPost',
       'read-post/:id': 'readPost',
-      'settings': 'settings'
+      'settings': 'settings',
+      'favorites': 'showFavorites'
     },
     loggedOutRoutes: {
       '': 'showLogin',

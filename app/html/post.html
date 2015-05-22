@@ -20,7 +20,7 @@
 </div>
 <div class="comments-section"></div>
 <div class="post-footer">
-    <button class="add-favorite">
+    <button class="add-favorite <% if (typeof favorite !== 'undefined') {%>btn-primary<%}%>">
         <span class="btn-icon fa fa-star"></span>Favorite
     </button>
     <button class="add-comment">
