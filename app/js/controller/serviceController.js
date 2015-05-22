@@ -48,10 +48,10 @@ define(function (require) {
             });
          });
     },
-    request: function(payload, method) {
+    request: function(payload, method, url) {
       method = method || 'POST';
         
-      var endpoint = '/ptsd-0.0.1/posts';
+      var endpoint = url || '/ptsd-0.0.1/posts';
 
       var promise = $.ajax({
         type: method,

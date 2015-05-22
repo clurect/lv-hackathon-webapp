@@ -29,10 +29,10 @@ define(function (require) {
         App.service.request({
           "comment": comment,
           "author": "jhillhouse",
-          "authorType": "veteran",
+          "authorType": "VETERAN",
           "date": Date.now(),
           "post": this.model.get('id')
-        }, 'PUT').then(function() {
+        }, 'PUT', '/ptsd-0.0.1/post/comment').then(function() {
           that.getComments();
         });
       }
