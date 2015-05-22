@@ -18,7 +18,7 @@ define(function (require) {
       App.containerRegion.show(App.views.loginView);
     },
     showIndex: function() {
-      App.views.navMenu = new NavMenu();
+      //App.views.navMenu = new NavMenu();
       App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(App.views.main);
     },
@@ -26,7 +26,7 @@ define(function (require) {
       var newPostView = new NewPostView({
         type: type
       });
-      App.containerRegion.show(App.views.navMenu);
+      App.menuRegion.show(App.views.navMenu);
       App.containerRegion.show(newPostView);
     },
     showComments: function (model, region) {
