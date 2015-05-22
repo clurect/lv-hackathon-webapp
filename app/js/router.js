@@ -7,7 +7,8 @@ define(function (require) {
       '': 'showIndex',
       'new-post': 'newPost',
       'new-post/:type': 'newPost',
-      'read-post/:id': 'readPost'
+      'read-post/:id': 'readPost',
+      'settings': 'settings'
     },
     loggedOutRoutes: {
       '': 'showLogin',

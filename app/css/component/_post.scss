@@ -68,6 +68,10 @@
       &:last-child {
         border-right: 0;
       }
+
+      &.btn-primary {
+        background: rgba(0,0,0,0.8);
+      }
     }
   }
   .post-container {
