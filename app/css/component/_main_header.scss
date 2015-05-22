@@ -13,9 +13,12 @@
     .user-pic {
       border-radius: 25px;
       height: 50px;
-      margin-right: 20px;
+      margin-right: 5px;
       overflow: hidden;
       width: 50px;
+      img {
+        width: 32px;
+      }
     }
     
     .user-options {
